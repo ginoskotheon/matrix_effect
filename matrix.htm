@@ -1,0 +1,58 @@
+<script type="text/javascript">
+	function matrixeffect() {
+		for (s = window.screen, w = c.width = s.width, 
+			h = c.height = s.height, 
+			m = Math.random, 
+			p = [],
+			i = 0;
+			
+			
+			i < 256;
+			
+			p[i++] = 1);
+	
+		setInterval (
+			function() {
+			 
+				c.getContext('2d').fillStyle = 'rgba(0,0,0,0.05)';
+				c.getContext('2d').fillRect(0,0,w,h);
+				c.getContext('2d').fillStyle= '#0F0';
+				
+				p.map(
+				
+					function(v,i) {
+					
+						randomNum = m() * 33;
+						
+						randomAsianChar = String.fromCharCode(48 + 30000 + randomNum);
+						
+						c.getContext('2d').fillText(
+						
+							randomAsianChar,
+							i * 10,
+							v
+						);
+						
+						
+						minHeight = 758;
+						num = minHeight + m() * 10000;
+						
+						p[i] = (v > num) ? 0 : v + 10;
+
+					}
+					
+				)
+		
+			}, 33 
+
+		);
+		
+	}
+
+
+</script>
+
+
+<body style="margin:0;" onload="matrixeffect();">
+	<canvas id="c" />
+</body>
